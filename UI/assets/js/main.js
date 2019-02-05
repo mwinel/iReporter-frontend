@@ -1,15 +1,4 @@
-// fetch using a Request and a Headers objects
-// send user post data to the server
-
 const url = 'https://ireporter-1233.herokuapp.com/api/v2/auth/signup';
-
-let firstname = document.getElementById('firstname');
-let lastname = document.getElementById('lastname');
-let othernames = document.getElementById('othernames');
-let username = document.getElementById('username');
-let email = document.getElementById('email');
-let password = document.getElementById('password');
-let phone_number = document.getElementById('phone_number');
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -17,8 +6,18 @@ function init(){
   document.getElementById('addUser').addEventListener('submit', addUser);
 }
 
+// fetch using a Request and a Headers objects
+// send user post data to the server
 function addUser(e) {
   e.preventDefault();
+  
+  let firstname = document.getElementById('firstname');
+  let lastname = document.getElementById('lastname');
+  let othernames = document.getElementById('othernames');
+  let username = document.getElementById('username');
+  let email = document.getElementById('email');
+  let password = document.getElementById('password');
+  let phone_number = document.getElementById('phone_number');
   // create headers
   let h = new Headers();
   h.append('Accept', 'application/json', 'charset=utf-8');
