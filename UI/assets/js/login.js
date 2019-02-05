@@ -14,8 +14,8 @@ function userLogin(e) {
   let username = document.getElementById('username');
   let password = document.getElementById('password');
 
-  let h = new Headers();
-  h.append('Accept', 'application/json', 'charset=utf-8');
+  let req_headers = new Headers();
+  req_headers.append('Accept', 'application/json', 'charset=utf-8');
 
   let login_data = {
     username: username.value,
@@ -24,7 +24,7 @@ function userLogin(e) {
 
   let req = new Request(url, {
     method: 'POST',
-    headers: h,
+    headers: req_headers,
     mode: 'cors',
     body: JSON.stringify(login_data)
   });

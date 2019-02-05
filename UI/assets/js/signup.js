@@ -19,8 +19,8 @@ function addUser(e) {
   let password = document.getElementById('password');
   let phone_number = document.getElementById('phone_number');
   // create headers
-  let h = new Headers();
-  h.append('Accept', 'application/json', 'charset=utf-8');
+  let req_headers = new Headers();
+  req_headers.append('Accept', 'application/json', 'charset=utf-8');
   // create input data
   let input_data = {
     firstname: firstname.value,
@@ -34,7 +34,7 @@ function addUser(e) {
 
   let req = new Request(url, {
     method: 'POST',
-    headers: h,
+    headers: req_headers,
     mode: 'cors',
     body: JSON.stringify(input_data)
   });
