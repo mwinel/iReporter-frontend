@@ -1,16 +1,14 @@
 const url = 'https://ireporter-1233.herokuapp.com/api/v2/auth/signup';
+// const url = 'http://localhost:5000/api/v2/auth/signup';
 
 document.addEventListener('DOMContentLoaded', init);
-
 function init(){
   document.getElementById('addUser').addEventListener('submit', addUser);
 }
-
 // fetch using a Request and a Headers objects
 // send user signup post data to the server
 function addUser(e) {
   e.preventDefault();
-  
   let firstname = document.getElementById('firstname');
   let lastname = document.getElementById('lastname');
   let othernames = document.getElementById('othernames');
