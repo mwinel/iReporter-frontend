@@ -209,16 +209,17 @@ input[type=search]:focus {
 .flag-card {
     background: #ffffff;
     padding-bottom: 20px;
-    border-radius: 6px;
+    border-radius: 3px;
 }
 
 .flag-card img {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .card-title {
     margin: 15px 15px;
+    font-size: 17px;
 }
 
 .card-desc {
@@ -231,19 +232,19 @@ input[type=search]:focus {
     margin: 0 15px;
 }
 
-.btn-intervene {
-    padding: 12px 40px;
+.btn-readmore {
+    padding: 12px 15px;
     background: #ffffff;
     border: 2px solid #cc0000;
     border-radius: 4px;
     color: #cc0000;
     font-size: 14px;
     font-weight: 600;
-    width: 100%;
     cursor: pointer;
+    margin: 0px 15px 0px 15px;
 }
 
-.btn-intervene:hover {
+.btn-readmore:hover {
     background: #cc0000;
     color: #ffffff;
 }
@@ -287,7 +288,7 @@ input[type=search]:focus {
 .col {
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 1% 1% 0;
 }
 .col:first-child { 
     margin-left: 0; 

@@ -1,5 +1,4 @@
-const url = 'https://ireporter-1233.herokuapp.com/api/v2/auth/login';
-// const url = 'http://localhost:5000/api/v2/auth/login';
+const LOGIN_URL = 'https://ireporter-1233.herokuapp.com/api/v2/auth/login';
 
 document.addEventListener('DOMContentLoaded', init);
 function init(){
@@ -21,7 +20,7 @@ function userLogin(e) {
     password: password.value
   };
 
-  let req = new Request(url, {
+  let req = new Request(LOGIN_URL, {
     method: 'POST',
     headers: req_headers,
     mode: 'cors',
@@ -30,12 +29,12 @@ function userLogin(e) {
   console.log(req);
   fetch(req)
   .then(response => response.json())
-  .then((data) => {
+  .then(data => {
     console.log(data);
     if (data.message) {
       output = `<p>${data.message}</p>`;
       window.setTimeout(function() {
-        window.location.replace('add_redflag.html');
+        window.location.replace('index.html');
       }, 3000);
       localStorage.setItem("access_token", data.access_token);
     }
@@ -44,7 +43,7 @@ function userLogin(e) {
     }
     document.getElementById('message').innerHTML = output;
   })
-  .catch(function(error) {
+  .catch(error => {
     console.log(error);
   });
 }
