@@ -1,5 +1,4 @@
-const url = 'https://ireporter-1233.herokuapp.com/api/v2/auth/signup';
-// const url = 'http://localhost:5000/api/v2/auth/signup';
+const SIGNUP_URL = 'https://ireporter-1233.herokuapp.com/api/v2/auth/signup';
 
 document.addEventListener('DOMContentLoaded', init);
 function init(){
@@ -30,7 +29,7 @@ function addUser(e) {
     phone_number: phone_number.value
   };
 
-  let req = new Request(url, {
+  let req = new Request(SIGNUP_URL, {
     method: 'POST',
     headers: req_headers,
     mode: 'cors',
@@ -38,7 +37,7 @@ function addUser(e) {
   });
   fetch(req)
   .then(response => response.json())
-  .then((data) => {
+  .then(data => {
     console.log(data);
     if (data.message) {
       output = `<p>${data.message}</p>`;
@@ -51,7 +50,7 @@ function addUser(e) {
     }
     document.getElementById('message').innerHTML = output;
   })
-  .catch(function(error) {
+  .catch(error => {
     console.log(error);
   });
 }

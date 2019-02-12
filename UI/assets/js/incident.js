@@ -1,5 +1,4 @@
-// const redflags = 'http://localhost:5000/api/v2/red-flags';
-const redflags = 'https://ireporter-1233.herokuapp.com/api/v2/red-flags';
+const REDFLAGS_URL = 'https://ireporter-1233.herokuapp.com/api/v2/red-flags';
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dvvclttae/upload';
 const CLOUDINARY_UPLOAD_PRESET = 'tz6no9pl';
 
@@ -54,7 +53,7 @@ function addIncident(e) {
     comment: comment.value
   }
 
-  let req = new Request(redflags, {
+  let req = new Request(REDFLAGS_URL, {
     method: 'POST',
     headers: {
       'content_type': 'application/json',
@@ -75,7 +74,7 @@ function addIncident(e) {
     }
     document.getElementById('message').innerHTML = output;
   })
-  .catch(function(error) {
+  .catch(error => {
     console.log(error);
   });
 }
