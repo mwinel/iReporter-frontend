@@ -20,7 +20,6 @@ let getIncidents = async () => {
 let AdminIncidents = {
     render : async () => {
         let incidents = await getIncidents()
-
         let output = /*html*/ `
             <div class="row">
                 <div class="flag-content">
@@ -64,7 +63,6 @@ let AdminIncidents = {
         return output
     }
     , after_render: async () => {}
-
 }
 
 export default AdminIncidents;

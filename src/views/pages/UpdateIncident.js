@@ -58,7 +58,7 @@ let UpdateIncident = {
         document.getElementById("addIncident").addEventListener ('submit', addIncident) 
         function addIncident(e) {
             e.preventDefault();
-            const ADD_INCIDENT_URL = 'http://localhost:5000/api/v2/red-flags';
+            const EDIT_INCIDENT_URL = 'http://localhost:5000/api/v2/red-flags';
             let authorizationHeader = localStorage.getItem('access_token')
             let incident_type = document.getElementById('incident_type');
             let location = document.getElementById('location');
@@ -78,7 +78,7 @@ let UpdateIncident = {
                 comment: comment.value
             }
 
-            let req = new Request(ADD_INCIDENT_URL, {
+            let req = new Request(ADD_INCIDENT_URL + incident_id, {
                 method: 'POST',
                 headers: {
                     'content_type': 'application/json',
