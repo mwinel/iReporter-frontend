@@ -73,39 +73,117 @@ label {
     float: right;
 }
 
+.posted-title {
+    margin-top: 45px;
+}
+
 #toggle {
     display: none;
 }
 
 #addUser {
-    top: 20%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
     max-width: 380px;
-    padding: 0 25px;
-    height: 100px;
+    padding: 40px 25px;
     margin: 0 auto;
 }
 
 #userLogin {
-    top: 40%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
     max-width: 380px;
-    padding: 0 25px;
-    height: 100px;
+    padding: 130px 25px;
     margin: 0 auto;
 }
 
-#message p {
-    background: #ddd;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
+#dialogoverlay {
+    display: none;
+    opacity: .9;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: transparent;
+    width: 100%;
+    z-index: 10;
+}
+
+#dialogboxsuccess {
+    display: none;
+    position: fixed;
+    border: 1px solid;
     border-radius: 4px;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    width: 400px;
+    z-index: 10;
+    font-size: 16px;
+    scroll-behavior: auto;
+}
+
+#dialogboxsuccess > div {
+    background: none;
+}
+
+#dialogboxsuccess > div #dialogboxbody-success {
+    padding: 15px 20px 0px 20px;
+}
+
+#dialogboxsuccess > div #dialogboxfooter-success {
+    padding: 15px 20px;
+    float: right;
+}
+
+#dialogboxerror {
+    display: none;
+    position: fixed;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    width: 400px;
+    z-index: 10;
+    color: #721c24;
+    font-size: 16px;
+    scroll-behavior: auto;
+}
+
+#dialogboxerror > div {
+    background: none;
+}
+
+#dialogboxerror > div #dialogboxbody-error {
+    padding: 15px 20px 0px 20px;
+}
+
+#dialogboxerror > div #dialogboxfooter-error {
+    padding: 15px 20px;
+    float: right;
+}
+
+#alert-ok {
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border: 1px;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.error-dialog {
+    max-width: 380px;
+    padding: 190px 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error-heading {
+    font-size: 80px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.error-paragraph {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .form-footer {
@@ -215,8 +293,8 @@ input[type=search]:focus {
 }
 
 .flag-card {
-    background: #ffffff;
-    padding-bottom: 20px;
+    background: #f6f4f6;
+    padding-bottom: 40px;
     border-radius: 3px;
 }
 
@@ -232,7 +310,7 @@ input[type=search]:focus {
 
 .card-desc {
     font-size: 13px;
-    padding: 5px 15px;
+    padding: 15px 15px;
     color: #333333;
 }
 
@@ -241,19 +319,20 @@ input[type=search]:focus {
 }
 
 .btn-readmore {
-    padding: 12px 15px;
-    background: #ffffff;
+    padding: 10px 15px;
+    background: #cc0000;
     border: 2px solid #cc0000;
     border-radius: 4px;
-    color: #cc0000;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     margin: 0px 15px 0px 15px;
+    text-decoration: none;
 }
 
 .btn-readmore:hover {
-    background: #cc0000;
+    opacity: .7;
     color: #ffffff;
 }
 
@@ -271,6 +350,7 @@ input[type=search]:focus {
     font-weight: 600;
     cursor: pointer;
     margin-top: 5px;
+    text-decoration: none;
 }
 
 .btn-create:hover {
@@ -340,15 +420,9 @@ img {
 }
 
 #addIncident {
-    top: 60%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-51%);
-    width: 100%;
     max-width: 550px;
     padding: 0 25px;
-    height: 100%;
-    margin: 20px auto;
+    margin: 60px auto;
 }
 
 .upload {
@@ -442,19 +516,8 @@ input[type=title]:focus {
     margin: 40px 0 20px 0;
 }
 
-.intervene h3 {
-    border: 1px solid #dbd9db;
-    border-radius: 4px;
-    padding: 20px;
-    background: #f6f4f6;
-    font-size: 13px;
-    line-height: 20px;
-}
-
 .intervene p {
-    font-size: 20px;
-    line-height: 30px;
-    padding: 10px 0;
+    font-size: 15px;
 }
 
 input[type=fname] {
@@ -559,6 +622,10 @@ tr:nth-child(even) {
     padding: 6px 10px;
     color: #ffffff;
     cursor: pointer;
+}
+
+.user-profile {
+    margin-top: 40px;
 }
 
 @media only screen and (max-width: 500px) {
