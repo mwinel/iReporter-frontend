@@ -4,7 +4,7 @@ let UpdateIncident = {
             <div class="row">
                 <form id="addIncident" method="POST" enctype="multipart/form-data">
                     <div id="message"></div>
-                        <h1>Create your incident</h1>
+                        <h1>Edit incident</h1>
                         <select id="incident_type">
                             <option value="select">Select incident type</option>
                             <option value="red-flag">red-flag</option>
@@ -17,7 +17,7 @@ let UpdateIncident = {
                         <input type="location" id="videos" placeholder="Add video link">
                         <textarea name="textarea" id="comment" placeholder="Add comment"></textarea>
                         <p id="out"></p>
-                        <button type="submit" class="btn-signup" value="submit">Add Incident</button>
+                        <button type="submit" class="btn-signup" value="submit">Save Changes</button>
                 </form>
             </div>
         `
